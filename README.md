@@ -1,10 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # codeTyke
 
 A multiple-choice application where children can learn how to code.
 
-Built on a backend with `express`/`sequelize`/`mySQL`/`Heroku` .
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
