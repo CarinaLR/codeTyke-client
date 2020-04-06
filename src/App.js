@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import AllQuestions from "./components/questions/AllQuestions";
-// import CreateQuestion from "./components/questions/CreateQuestions";
+import AllQuestions from "./components/questions/AllQuestions";
+import CreateQuestion from "./components/questions/CreateQuestions";
 
 export default function App() {
   return (
@@ -31,9 +31,11 @@ export default function App() {
             <About />
           </Route>
           <Route exact path="/questions/create">
-            {/* <CreateQuestion /> */}
+            <CreateQuestion />
           </Route>
-          <Route path="/questions">{/* <AllQuestions /> */}</Route>
+          <Route path="/questions">
+            <AllQuestions />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
