@@ -2,14 +2,14 @@ import React from "react";
 import axios from "axios";
 
 const AllQuestions = () => {
-  // state in our functional component, with React hooks
+  // state in our functional component, with React hooks, instead of having State.
   const [questions, setQuestions] = React.useState([]);
 
   const getQuestions = async () => {
     const { data } = await axios.get("/api/questions");
     setQuestions(data);
   };
-
+  //We can use .useEffect(), instead of componentDidMount
   React.useEffect(() => {
     getQuestions();
   }, []);
