@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AllQuestions from "./components/questions/AllQuestions";
-import CreateQuestion from "./components/questions/CreateQuestions";
+import CreateQuestion from "./components/questions/CreateQuestion";
 import CreateOption from "./components/options/CreateOption";
+import AllOptions from "./components/options/AllOptions";
 import SingleQuestion from "./components/questions/SingleQuestion";
+import "./main.scss";
 
 export default function App() {
   return (
@@ -24,9 +26,6 @@ export default function App() {
               <Link to="/questions/create">Create Question</Link>
             </li>
             <li>
-              <Link to="/questions/:id">Single Question</Link>
-            </li>
-            <li>
               <Link to="/options">Options</Link>
             </li>
           </ul>
@@ -37,17 +36,18 @@ export default function App() {
         <Switch>
           <Route path="/about">
             <About />
-            <Route exact path="/options/create">
-              <CreateOption />
-            </Route>
+          </Route>
+          <Route exact path="/options/create">
+            <CreateOption />
+          </Route>
+          <Route path="/options">
+            <AllOptions />
           </Route>
           <Route exact path="/questions/create">
             <CreateQuestion />
           </Route>
-          <Route path="/questions">
-            <AllQuestions />
-          </Route>
-          <Route exact path="/questions/:id" component={SingleQuestion}></Route>
+          <Route path="/questions/:id" component={SingleQuestion} />
+          <Route path="/questions" component={AllQuestions} />
           <Route path="/">
             <Home />
           </Route>
