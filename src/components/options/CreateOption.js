@@ -1,45 +1,50 @@
 import React, { useState } from "react";
+import { useInput } from "../../hooks/useInput";
 import axios from "axios";
 
 const CreateOption = () => {
-  const [body, setBody] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  // const [body, setBody] = useState("");
+  // const [instructions, setInstructions] = useState("");
+  const { value: body, bind: bindBody, reset: resetBody } = useInput("");
+  const {
+    value: imageUrl,
+    bind: bindImageUrl,
+    reset: resetImageUrl,
+  } = useInput("");
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     console.log(body, imageUrl);
-    await axios.post("/api/options", {
-      body,
-      imageUrl,
-    });
-    setBody("");
-    setImageUrl("");
+    // await axios.post('/api/questions', {
+    //   body,
+    //   instructions
+    // });
+    resetBody();
+    resetImageUrl();
   };
 
   return (
-    <div className="option-create">
-      <div className="option-create__header">
+    <div className="question-create">
+      <div className="question-create__header">
         <h2>Create A New Option</h2>
       </div>
-      <form className="option-create__form">
+      <form className="question-create__form">
         <label>Please enter an option:</label>
         <input
-          className="option-create__input-body"
+          className="question-create__input-body"
           type="text"
-          value={body}
-          onChange={(evt) => setBody(evt.target.value)}
+          {...bindBody}
         />
-        <label>Please enter additional imageUrl:</label>
+        <label>Please enter an image URL:</label>
         <input
-          className="option-create__input-imageUrl"
+          className="question-create__input-instructions"
           type="text"
-          value={imageUrl}
-          onChange={(evt) => setImageUrl(evt.target.value)}
+          {...bindImageUrl}
         />
         <input
-          className="option-create__input-submit"
+          className="question-create__input-submit"
           type="submit"
-          value="Add My Option"
+          value="Add My Question"
           onClick={handleSubmit}
         />
       </form>
