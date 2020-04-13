@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AllQuestions from "./components/questions/AllQuestions";
-import CreateQuestion from "./components/questions/CreateQuestion";
+import CreateQuestion from "./components/questions/CreateQuestions";
 import CreateOption from "./components/options/CreateOption";
 import AllOptions from "./components/options/AllOptions";
 import SingleQuestion from "./components/questions/SingleQuestion";

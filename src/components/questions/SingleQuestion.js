@@ -15,7 +15,7 @@ const SingleQuestion = (props) => {
 
   React.useEffect(() => {
     getQuestion();
-  }, []);
+  });
 
   return (
     <div className="question-single">
