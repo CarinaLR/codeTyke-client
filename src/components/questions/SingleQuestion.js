@@ -12,7 +12,7 @@ const SingleQuestion = (props) => {
   const getQuestion = async () => {
     const { id } = props.match.params;
     const { data } = await axios.get(
-      `https://codetyke-serverdemo.herokuapp.com/api/questions${id}`
+      `https://codetyke-serverdemo.herokuapp.com/api/questions/${id}`
     );
     setQuestion(data);
   };
