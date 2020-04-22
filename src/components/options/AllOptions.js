@@ -8,7 +8,9 @@ const AllOptions = (props) => {
   const [options, setOptions] = React.useState([]);
 
   const getOptions = async () => {
-    const { data } = await axios.get("/api/options");
+    const { data } = await axios.get(
+      "https://codetyke-serverdemo.herokuapp.com/api/options"
+    );
     setOptions(data);
   };
 

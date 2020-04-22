@@ -8,10 +8,13 @@ const CreateQuestion = () => {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     console.log(body, instructions);
-    await axios.post("/api/questions", {
-      body,
-      instructions,
-    });
+    await axios.post(
+      "https://codetyke-serverdemo.herokuapp.com/api/questions",
+      {
+        body,
+        instructions,
+      }
+    );
     setBody("");
     setInstructions("");
   };

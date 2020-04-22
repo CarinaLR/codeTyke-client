@@ -8,7 +8,9 @@ const AllQuestions = (props) => {
   const [questions, setQuestions] = React.useState([]);
 
   const getQuestions = async () => {
-    const { data } = await axios.get("/api/questions");
+    const { data } = await axios.get(
+      "https://codetyke-serverdemo.herokuapp.com/api/questions"
+    );
     setQuestions(data);
   };
 
